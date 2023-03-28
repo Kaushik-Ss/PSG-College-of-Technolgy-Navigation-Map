@@ -1,95 +1,94 @@
-import React,{useState} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import k_block from '../static/images/k_block.jpg';
 // import floating_data from './floating_data';
 import '../static/style/floating.css';
 import ImageMapper from './temp.js';
 
 
-export default function Image() {
-  function floating_data() {
-    return (
-        <div className='data'>
-            props
-            
-            HIIII
-        </div>
-    );
-}
-  
 
+const ImageMap = () => {
+  const [showText, setShowText] = useState(false);
+  const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
+  const [textContent, setTextContent] = useState('');
+  const [selectedArea, setSelectedArea] = useState(null);
+  const imageRef = useRef(null);
 
-const AREAS_MAP = {
-  name: "my-map",
-  areas: [
-    { name: "bfhenwjm", shape: "rect", coords: [340,831,414,929], fillColor: "blue" , lineWidth: 2 , strokeColor: "#6afd09" },
-    { name: "dbhansj", shape: "rect", coords: [490,637,692,460], lineWidth: 2 , strokeColor: "#6afd09" }
-  ]
-};
-// function overlaying(){
-//   return (
-//     <div >
-//         hello this is tooltip
-//     </div>
-// );
-// }
-// function enterArea(area) {
-//   setState({ hoveredArea: area });
-// }
+  const handleMouseOver = (event) => {
+    const t=event.target;
+    setSelectedArea(event.target);
+    // t.style.backgroundColor = 'yellow';
+    // t.style.color = 'red';
+    // // t.style.
+    // t.classList.add('highlight');
+    console.log(t);
+    // t.style.background="red";
+    const x = event.clientX;
+    const y = event.clientY;
 
-// function leaveArea(area) {
-//   setState({ hoveredArea: null });
-// }
+    const text = event.currentTarget.dataset.text;
+    if (text) {
+      setTextPosition({ x, y });
 
-// function getTipPosition(area) {
-//   return { top: `${area.center[1]}px`, left: `${area.center[0]}px` };
-// }
+      setTextContent(text);
+      setShowText(true);
+    } else {
+      setShowText(false);
+    }
+  };
 
-const renderTooltip = <span>Hello World</span>;
-
-  const [showComponent, setShowComponent] = useState(false);
-
-  function handleMouseOver() {
-   
-    setShowComponent(true);
-    showComponent && floating_data();
-  }
-
-  function handleMouseOut() {
-    setShowComponent(false);
-  }
+  const handleMouseOut = () => {
+    setShowText(false);
+    setSelectedArea(null);
+  };
 
   return (
+    <div style={{ position: 'relative' }}>
+      <img
+        src={k_block}
+        alt="Your image"
+        useMap="#image-map"
+        ref={imageRef}
+      />
 
-    
-    <div>
+      <map name="image-map">
+        <area
+          shape="rect"
+          coords="340,831,414,929"
+        data-text="DEPT OF. COMPUTER APPLICATTIONS"
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          className={selectedArea === 'area1' ? 'highlight' : ''}
+      
+        />
+        <area
+          shape="rect"
+          coords="490,637,692,460"
+          data-text="MCA COMPUTER LAB"
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          className={selectedArea === 'area1' ? 'highlight' : ''}
+        />
+        
+        {/* add more areas as needed */}
+      </map>
 
-    
-
-{/* {
-    	this.state.hoveredArea &&
-    	<span className="tooltip"
-    	    style={{ ...this.getTipPosition(this.state.hoveredArea)}}>
-    		{ this.state.hoveredArea && this.state.hoveredArea.name}
-    	</span>
-    } */}
-<ImageMapper src={k_block} map={AREAS_MAP} 
-onMouseEnter={area => this.enterArea(area)}
-
-
-/>
-
-   {/* <img id='block' src={k_block} alt='k_block' useMap="#image-map"></img> 
-    <map name="image-map" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-<area target="" alt="" title="" href="sadas.kdsd" coords="340,831,414,929" shape="rect"/>
-<area target="" alt="" title="" href="dsd.html" coords="490,637,692,460" shape="rect"/>
-</map> */}
-
-
-
-
+      {showText && (
+        <div
+          style={{
+            position: 'fixed',
+            top: textPosition.y,
+            left: textPosition.x,
+            backgroundColor: 'white',
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
+            padding: '10px',
+            zIndex: 1,
+          }}
+        >
+          {textContent}
+        </div>
+      )}
     </div>
-    
-  )
-}
+  );
+};
 
-
+export default ImageMap;
