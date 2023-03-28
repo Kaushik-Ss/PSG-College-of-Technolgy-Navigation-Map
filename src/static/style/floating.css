@@ -1,0 +1,21 @@
+.canvas
+{ z-index: 2 }
+
+.img{ z-index: 1; }
+			
+
+
+
+.tooltip {
+    position: absolute;
+    color: #fff;
+    padding: 10px;
+    background: rgba(0,0,0,0.8);
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 500px;
+    pointer-events: none;
+    z-index: 1000;
+}
+.data{
+    align-items: center;
+}
