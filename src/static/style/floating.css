@@ -5,9 +5,18 @@
         
       
 }
-img {
-    /* width: 100%; */
-    filter: blur(5px);}
+
+
+.floating-text {
+  display: none;
+  opacity: 0;
+}
+
+
+showText{
+  text-decoration: blue;
+}
+
   
 #overlay {
     position: absolute;
@@ -24,3 +33,35 @@ img {
     position: relative;
     pointer-events: none; /* Make the highlighted area transparent to mouse events */
   }
+  map area:hover { border: 1px solid #d5d5d5; }
+
+
+
+  .image-map-container {
+    position: relative;
+    display:inline-block;
+}
+.image-map-container img {
+    display:block;
+}
+.image-map-container .map-selector {
+    left:0;top:0;right:0;bottom:0;
+    color:#546E7A00;
+    transition-duration:200ms;
+    transition-timing-function: ease-out;
+    transition-property: top, left, right, bottom, color;
+}
+.image-map-container .map-selector.hover {
+    color:#546E7A80;
+}
+
+.map-selector:after {
+    content: '';
+    position: absolute;
+    top: inherit;right: inherit;bottom: inherit;left: inherit;
+    background: currentColor;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    transition-property: top, left, right, bottom, background;
+    pointer-events: none;
+}

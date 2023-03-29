@@ -1,0 +1,15 @@
+{
+    "areas": [
+      {
+        "shape": "rect",
+        "coords": "490,637,692,460",
+        "text": "MCA COMPUTER LAB"
+      },
+      {
+        "shape": "rect",
+        "coords": "340,831,414,929",
+        "text": "DEPT OF. COMPUTER APPLICATTIONS"
+      }
+    ]
+  }
+  
