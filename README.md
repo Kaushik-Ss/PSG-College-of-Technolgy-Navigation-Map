@@ -1,3 +1,7 @@
+## Instructions
+- Used https://www.image-map.net/ to generate Image map coordinates
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
