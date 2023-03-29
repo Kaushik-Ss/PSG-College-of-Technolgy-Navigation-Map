@@ -2,6 +2,10 @@
 - Used https://www.image-map.net/ to generate Image map coordinates
 
 
+## Bugs
+- Wrong order of coordinates in image maps causes the highlight box to stutter
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
