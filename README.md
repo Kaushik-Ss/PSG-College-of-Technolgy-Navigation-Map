@@ -5,6 +5,7 @@
 ## Bugs
 - Wrong order of coordinates in image maps causes the highlight box to stutter
 - need to remove sidebar toggle and add login page, already done need to add it here
+- Need to remove some unused npm modules and clean the project, refactor, etc
 
 
 # Getting Started with Create React App
