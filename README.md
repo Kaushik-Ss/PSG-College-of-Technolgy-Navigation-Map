@@ -1,3 +1,13 @@
+## Instructions
+- Used https://www.image-map.net/ to generate Image map coordinates
+
+
+## Bugs
+- Wrong order of coordinates in image maps causes the highlight box to stutter
+- need to remove sidebar toggle and add login page, already done need to add it here
+- Need to remove some unused npm modules and clean the project, refactor, etc
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
