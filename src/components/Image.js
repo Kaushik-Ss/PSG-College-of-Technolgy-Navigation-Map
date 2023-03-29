@@ -9,9 +9,7 @@ const ImageMap = () => {
   const [showText, setShowText] = useState(false);
   const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
   const [textContent, setTextContent] = useState('');
-  const [selectedArea, setSelectedArea] = useState(null);
   const imageRef = useRef(null);
-  const [areas, setAreas] = useState([]);
 
   useEffect(() => {
 
@@ -31,7 +29,6 @@ const ImageMap = () => {
 
     const handleMouseOut = () => {
       setShowText(false);
-      setSelectedArea(null);
     };
 
     // Use jQuery inside the function
@@ -72,7 +69,7 @@ const ImageMap = () => {
       
 
 <div className="image-map-container">
-    <img src={k_block} useMap="#image-map" ref={imageRef}/>
+    <img src={k_block} useMap="#image-map" alt='Map' ref={imageRef}/>
     <div className="map-selector"></div>
 </div>
 
@@ -85,6 +82,7 @@ const ImageMap = () => {
             shape={area.shape}
             coords={area.coords}
             data-text={area.text}
+            alt = 'data_map'
           />
         ))}
       </map>
@@ -112,7 +110,7 @@ const ImageMap = () => {
         >
           {textContent}
           <Floatingdata />
-          
+
         </div>
       )}
     </div>
