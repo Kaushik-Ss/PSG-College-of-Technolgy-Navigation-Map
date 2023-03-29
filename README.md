@@ -7,6 +7,14 @@
 - need to remove sidebar toggle and add login page, already done need to add it here
 - Need to remove some unused npm modules and clean the project, refactor, etc
 
+## Demo
+
+- Current version
+https://user-images.githubusercontent.com/75175772/228534784-2e6747e8-0b49-428a-8f7b-8e56227a6488.mp4
+
+- How to use  https://www.image-map.net/ to generate image map posisitions
+https://user-images.githubusercontent.com/75175772/228534845-a2b5b022-c306-42ee-bcf0-f4b00470d62e.mp4
+
 
 # Getting Started with Create React App
 
