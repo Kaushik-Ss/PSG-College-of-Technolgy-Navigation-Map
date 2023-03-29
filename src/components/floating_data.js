@@ -1,13 +1,15 @@
 import React from 'react';
-// import '../static/style/floating.css';
-function floating_data(props) {
+import '../static/style/floating_data.css';
+function Floating_data(props) {
     return (
         <div className='data'>
-            props
-            
-            HIIII
+            {/* Extra data reg the department */}
+            !Extra data reg department, as of now it is just a placeholder
+            <br>
+            </br>
+            Need to get props element and print related elements from a data_deparement.json file
         </div>
     );
 }
 
-export default floating_data;
+export default Floating_data;

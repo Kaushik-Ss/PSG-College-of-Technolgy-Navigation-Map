@@ -1,16 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import k_block_data from '../static/data/k_block.json'; // assuming your JSON file is named computerLabMap.json
-
+import k_block_data from '../static/data/k_block.json';
 import k_block from '../static/images/k_block.jpg';
-// import floating_data from './floating_data';
 import '../static/style/floating.css';
-import ImageMapper from './temp.js';
+import Floating_data from './Floating_data.js'
 import $ from "jquery";
-// import XLSX from 'xlsx';
-import * as XLSX from 'xlsx'
-// import 'data.csv' as data_file;
-import Papa from 'papaparse';
-import './data.csv';
 
 const ImageMap = () => {
   const [showText, setShowText] = useState(false);
@@ -113,12 +106,12 @@ const ImageMap = () => {
             opacity: 1,
             transition: 'opacity 200ms, display 200ms',
             color: 'white'
-            
           }
         
         }
         >
           {textContent}
+          <Floating_data/>
         </div>
       )}
     </div>

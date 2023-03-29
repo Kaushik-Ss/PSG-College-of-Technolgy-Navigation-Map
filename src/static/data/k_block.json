@@ -1,15 +1,54 @@
 {
-    "areas": [
-      {
-        "shape": "rect",
-        "coords": "490,637,692,460",
-        "text": "MCA COMPUTER LAB"
-      },
-      {
-        "shape": "rect",
-        "coords": "340,831,414,929",
-        "text": "DEPT OF. COMPUTER APPLICATTIONS"
-      }
-    ]
-  }
-  
+  "areas": [
+    {
+      "shape": "rect",
+      "coords": "490,465,696,639",
+      "text": "MCA COMPUTER LAB"
+    },
+    {
+      "shape": "rect",
+      "coords": "340,831,414,929",
+      "text": "DEPT OF. COMPUTER APPLICATTIONS"
+    },
+    {
+      "shape": "rect",
+      "coords": "172,465,400,633",
+      "text": "INTELLIGENT SYSTEM LABS"
+    },
+    {
+      "shape": "rect",
+      "coords": "341,314,867,419",
+      "text": "OTS"
+    },
+    {
+      "shape": "rect",
+      "coords": "348,692,865,782",
+      "text": "OTS"
+    },
+    {
+      "shape": "rect",
+      "coords": "406,470,485,634",
+      "text": "Library for E-Learning center"
+    },
+    {
+      "shape": "rect",
+      "coords": "264,697,341,780",
+      "text": "Wireless network and Embedded cnter lab"
+    },
+    {
+      "shape": "rect",
+      "coords": "161,94,1044,274",
+      "text": "Lecture Hall"
+    },
+    {
+      "shape": "rect",
+      "coords": "232,839,335,1036",
+      "text": "IBM CENTER FOR COMPUTING"
+    },
+    {
+      "shape": "rect",
+      "coords": "409,828,519,1063",
+      "text": "Research and Computer Lab"
+    }
+  ]
+}
