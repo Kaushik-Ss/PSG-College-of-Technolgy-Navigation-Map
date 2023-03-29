@@ -12,7 +12,7 @@ function App() {
       
         <Header />
         {/* login form */}
-        <Login />
+        {/* <Login /> */}
         
         {/* image map */}
         <ImageMap/>
