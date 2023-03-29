@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import k_block_data from '../static/data/k_block.json';
 import k_block from '../static/images/k_block.jpg';
 import '../static/style/floating.css';
-import Floating_data from './Floating_data.js';
+import Floatingdata from './Floatingdata.js';
 import $ from "jquery";
 
 const ImageMap = () => {
@@ -111,7 +111,8 @@ const ImageMap = () => {
         }
         >
           {textContent}
-          <Floating_data/>
+          <Floatingdata />
+          
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../static/style/floating_data.css';
-function Floating_data(props) {
+function Floatingdata(props) {
     return (
         <div className='data'>
             {/* Extra data reg the department */}
@@ -12,4 +12,4 @@ function Floating_data(props) {
     );
 }
 
-export default Floating_data;
+export default Floatingdata;
