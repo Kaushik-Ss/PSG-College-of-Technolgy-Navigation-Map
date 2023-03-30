@@ -1,10 +1,12 @@
+## ⚠️ WORK IN PROGRESS ⚠️
+##### Deployed at https://psgtech.netlify.app/
 ## Instructions
 - Used https://www.image-map.net/ to generate Image map coordinates
 ######
 [![wakatime](https://wakatime.com/badge/user/76b68047-0e7a-49a1-ac11-f631a2b45e33/project/c25626b8-2d05-4a98-8209-7deaa18f9832.svg)](https://wakatime.com/badge/user/76b68047-0e7a-49a1-ac11-f631a2b45e33/project/c25626b8-2d05-4a98-8209-7deaa18f9832)
 ## Bugs
 - Wrong order of coordinates in image maps causes the highlight box to stutter
-- need to remove sidebar toggle and add login page, already done need to add it here
+- ~need to remove sidebar toggle~ and add login page, already done need to add it here
 - Need to remove some unused npm modules and clean the project, refactor, etc
 
 ## Demo
