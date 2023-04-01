@@ -10,7 +10,6 @@ const ImageMap = () => {
   const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
   const [textContent, setTextContent] = useState('');
   const imageRef = useRef(null);
-  const areaRef = useRef(null);
   const [isHovering, setIsHovering] = useState(false);
   const areaRefs = useRef([]);
 
