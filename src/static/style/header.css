@@ -1,0 +1,11 @@
+.page_header a{
+    text-decoration: solid;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration-color: aquamarine;
+    background-color: black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    border-radius: 1cap;
+}

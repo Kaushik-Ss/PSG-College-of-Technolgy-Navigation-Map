@@ -3,18 +3,21 @@ import k_block_data from '../static/data/k_block.json';
 import k_block from '../static/images/k_block.jpg';
 import '../static/style/floating.css';
 import Floatingdata from './Floatingdata.js';
-import $ from "jquery";
+
 
 const ImageMap = () => {
   const [showText, setShowText] = useState(false);
   const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
   const [textContent, setTextContent] = useState('');
   const imageRef = useRef(null);
+  const areaRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const areaRefs = useRef([]);
+
 
   useEffect(() => {
-
-    const handleMouseOver = (event) => {
-      const x = event.clientX;
+  const handleMouseOver = (event) => {
+    const x = event.clientX;
       const y = event.clientY;
 
       const text = event.currentTarget.dataset.text;
@@ -25,42 +28,52 @@ const ImageMap = () => {
       } else {
         setShowText(false);
       }
-    };
+      setIsHovering(true);}
+    const handleMouseOut = () => {setIsHovering(false);
+    setShowText(false);}
+  
 
-    const handleMouseOut = () => {
-      setShowText(false);
-    };
+    const areas = areaRefs.current;
+    areas.forEach(area => {
+      area.addEventListener('mouseover', handleMouseOver);
+      area.addEventListener('mouseout', handleMouseOut);
+    });
 
-    // Use jQuery inside the function
-    $('area').on('mouseover', handleMouseOver);
-    $('area').on('mouseout', handleMouseOut);
-
-    // Clean up the event listeners when the component unmounts
     return () => {
-      $('area').off('mouseover', handleMouseOver);
-      $('area').off('mouseout', handleMouseOut);
-
-      $('#image-map area').hover(
-        function () { 
-            var coords = $(this).attr('coords').split(','),
-                width = $('.image-map-container').width(),
-                height = $('.image-map-container').height();
-            $('.image-map-container .map-selector').addClass('hover').css({
-                'left': coords[0]+'px',
-                'top': coords[1] + 'px',
-                'right': width - coords[2],
-                'bottom': height - coords[3]
-            })
-        },
-        function () { 
-            $('.image-map-container .map-selector').removeClass('hover').attr('style','');
-        }
-    )
+      areas.forEach(area => {
+        area.removeEventListener('mouseover', handleMouseOver);
+        area.removeEventListener('mouseout', handleMouseOut);
+      });
+    };
+  }, []);
 
 
       
-    };
-  }, []);
+  const handleMapHover = event => {
+    if (!isHovering) {
+
+      
+      const coords = event.target.getAttribute('coords').split(',');
+      const width = imageRef.current.clientWidth;
+      const height = imageRef.current.clientHeight;
+      const mapSelector = document.querySelector('.map-selector');
+      mapSelector.classList.add('hover');
+      mapSelector.style.left = `${coords[0]}px`;
+      mapSelector.style.top = `${coords[1]}px`;
+      mapSelector.style.right = `${width - coords[2]}px`;
+      mapSelector.style.bottom = `${height - coords[3]}px`;
+    }
+  };
+
+  const handleMapLeave = () => {
+    if (!isHovering) {
+      const mapSelector = document.querySelector('.map-selector');
+      mapSelector.classList.remove('hover');
+      mapSelector.removeAttribute('style');
+      setShowText(false);
+    }
+  };
+
 
 
   return (
@@ -75,9 +88,9 @@ const ImageMap = () => {
 
 
 <div id="overlay"></div>
-      <map name="image-map" id="image-map">
+      <map name="image-map" id="image-map" onMouseMove={handleMapHover} onMouseLeave={handleMapLeave}>
 {k_block_data.areas.map((area, index) => (
-          <area
+          <area ref={el => areaRefs.current[index] = el}
             key={index}
             shape={area.shape}
             coords={area.coords}
